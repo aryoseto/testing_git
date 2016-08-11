@@ -36,6 +36,13 @@ for line in file:
 file.close()
 
 # Print list joint into files
-with open ("ChordNodes.csv", "w") as output:
-    writer = csv.writer(output, lineterminator='\n')
-    writer.writerows(result)
+###with open ("ChordNodes.csv", "w") as output:
+###    writer = csv.writer(output, lineterminator='\n')
+###    writer.writerows(result)
+
+# Print list joint into files using standard python
+with open('ChordNodes.txt', "w") as output:
+    output.write("Joint        Chord1      Chord2\n")
+    for i, item in enumerate(result):
+        output.write(str(item[0])+"    "+str(item[1])+"    "+str(item[2]) + "\n")
+
